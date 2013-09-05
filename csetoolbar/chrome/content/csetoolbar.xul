@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+
+<!-- 
+	csetoolbar.xul file 
+	created on Monday, August 26th, 2012 at 20:58
+	updated on Saturday, August 31st, 2013 at 00:00
+	by BETTA Mohamed Islem
+	bettamedislem@gmail.com
+							-->
+
+
+<!-- css sheet used --> 
+
+<?xml-stylesheet href="chrome://csetoolbar/skin/csetoolbar.css" type="text/css"?>
+
+<!-- overlay tag -->
+
+<overlay id="CSETB-Overlay"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<!-- the JavaScript file used -->
+
+	<script type="application/x-javascript"	src="chrome://csetoolbar/content/csetoolbar.js" />
+
+	
+
+	<!-- ToolBox -->
+
+	<toolbox id="navigator-toolbox">
+
+		<!-- Toolbar -->
+
+		<toolbar id="CSETB-Toolbar" toolbarname="CSE Toolbar" accesskey="T" 
+			iconsize="large" class="chromeclass-toolbar" context="toolbar-context-menu"
+			hidden="false" persist="hidden">
+
+		<toolbaritem id="CSETB-Toolbaritem" flex="5">
+
+			<!-- official website button -->
+
+			<toolbarbutton id="CSETB-Web-Button" tooltiptext="Le Site Web du CSE" accesskey="W" 
+				label="CSE SiteWeb" onclick="CSETB_LoadURL('http://cse-club.org/')" />
+
+			<!-- a separator -->
+
+			<toolbarseparator />
+
+			<!-- facebook page button -->
+
+			<toolbarbutton id="CSETB-Facebook-Button" tooltiptext="Aimez notre page Facebook" 
+				type="menu" label="" >
+
+				<menupopup>
+
+					<menuitem id="CSETB-Facebook-CSE" label="Page du CSE" accesskey="P"
+						class="menuitem-iconic" tooltiptext="Aimez notre page Facebook"
+						onclick="CSETB_LoadURL('https://www.facebook.com/club.scientifique.esi')" />
+
+						<menuseparator />
+
+					<menuitem id="CSETB-Facebook-Security" label="Page de la Section Sécurité" accesskey="S"
+						class="menuitem-iconic" tooltiptext="Suivez l'actualité de la sécurité informatique"
+						onclick="CSETB_LoadURL('https://www.facebook.com/CSE.Section.Securite')" />
+
+
+				</menupopup>
+
+
+			</toolbarbutton>
+
+
+			<!-- twitter button -->
+
+			<toolbarbutton id="CSETB-Twitter-Button" tooltiptext="Suivez nous sur Twitter" 
+				type="menu" label=""  >
+
+				<menupopup>
+
+					<menuitem id="CSETB-Twitter-CSE" label="Compte twitter du CSE" accesskey="t"
+						class="menuitem-iconic" tooltiptext="Suivez les twitts du CSE"
+						onclick="CSETB_LoadURL('https://twitter.com/CSESI')" />
+
+						<menuseparator />
+
+					<menuitem id="CSETB-Twitter-Security" label="Twitter de la Section Sécurité" accesskey="S"
+						class="menuitem-iconic" tooltiptext="Suivez les twitts de la sécurité informatique"
+						onclick="CSETB_LoadURL('https://twitter.com/CSE_Security')" />
+
+
+				</menupopup>
+
+			</toolbarbutton>
+
+			<!-- google+ button -->
+
+			<toolbarbutton id="CSETB-Gplus-Button" tooltiptext="Ajoutez nous sur Google+" 
+				label="" onclick="CSETB_LoadURL('https://plus.google.com/105933695338438071347/')" />
+
+			<!-- youtube button -->
+
+			<toolbarbutton id="CSETB-Youtube-Button" tooltiptext="Abonnez-vous à notre chaine Youtube" 
+				label="" onclick="CSETB_LoadURL('https://www.youtube.com/user/ClubScientifiqueESI')" />
+
+			<!-- slideshare button -->
+
+			<toolbarbutton id="CSETB-Slideshare-Button" tooltiptext="Suivez nos slides sur Slideshare" 
+				label="" onclick="CSETB_LoadURL('http://www.slideshare.net/ClubScientifiqueESI-CSE')" />
+
+			
+			<!-- a separator -->
+
+			<toolbarseparator />
+			
+			<!-- search in the cse website -->
+
+			<!-- SearchBox item -->
+
+			 <textbox id="CSETB-Search-Textbox" type="autocomplete" autocompletesearch="form-history" 
+				autocompletesearchparam="searchHistory" enablehistory="true" flex="2"
+				onkeypress="CSETB_KeyHandler(event);"/>
+
+			<!-- SearchBox Resizer -->
+
+			<splitter id="CSETB-Resize-Splitter" state="open" collapse="none"
+				resizebefore="closest" resizeafter="farthest"
+				tooltiptext="Redimensionner le champ de Recherche">
+
+				<vbox id="CSETB-Resize-Bar" />
+
+			</splitter>
+
+			<!-- Search Button -->
+
+			<toolbarbutton id="CSETB-Search-Button" tooltiptext="Recherchez sur le Site du CSE" accesskey="R"
+				label="Recherche" onclick="CSETB_Search(event, 'word')" />
+
+			<!-- a separator -->
+
+			<toolbarseparator />
+
+			<!-- Sections menu -->
+
+			<toolbarbutton id="CSETB-Section-Menu" label="CSE Sections  "
+				type="menu" tooltiptext="Lien vers les pages des sections du CSE">
+
+				<!-- Items-->
+
+				<menupopup>
+
+					<menuitem id="CSETB-Section-Design" label="Section Design" accesskey="D"
+						class="menuitem-iconic" tooltiptext="Lien vers les articles de la section design"
+						onclick="CSETB_LoadURL('http://cse-club.org/category/section/design/')" />
+					
+					<menuitem id="CSETB-Section-Securety" label="Section Sécurité" accesskey="S"
+						class="menuitem-iconic" tooltiptext="Lien vers les articles de la section sécurité"
+						onclick="CSETB_LoadURL('http://cse-club.org/category/section/security/')" />
+					
+					<menuitem id="CSETB-Section-Reseaux " label="Section Réseaux " accesskey="R"
+						class="menuitem-iconic" tooltiptext="Lien vers les articles de la section réseaux"
+						onclick="CSETB_LoadURL('http://cse-club.org/category/section/reseau-informatique/')" />
+					
+					<menuitem id="CSETB-Section-Opensource" label="Section Open Source" accesskey="O"
+						class="menuitem-iconic" tooltiptext="Lien vers les articles de la section opensource"
+						onclick="CSETB_LoadURL('http://cse-club.org/category/section/opensource/')" />
+
+
+
+				</menupopup>
+
+			</toolbarbutton>
+
+
+			<!-- a separator -->
+
+			<toolbarseparator />
+
+			<!-- mail button -->
+
+			<toolbarbutton id="CSETB-Mail-Button" tooltiptext="Contactez nous sur notre Email" 
+				label="" onclick="CSETB_LoadURL('mailto:cse@esi.dz')" />
+
+			</toolbaritem>
+
+			<!-- empty space-->
+
+			<toolbarspring flex="40" context="toolbar-context-menu"/>
+
+
+			<!-- RSS Reader -->
+
+
+			<toolbaritem id="CSETB-RSS-Reader" flex="0" align="center">
+
+				<!-- CONTEXT MENU - RSS LINK -->
+				<menupopup id="CSETB-RSS-Reader-Description-Link-Inner-Contextmenu">
+				
+					<!-- Open Link in current tab -->
+					<menuitem id="CSETB-RSS-Reader-Link-Contextmenu-Open" accesskey="O"
+							label="Ouvrir"
+							oncommand="CSETBRSS.openFeed(document.popupNode);" />
+
+					<!-- Open Link in new tab -->		
+					<menuitem id="CSETB-RSS-Reader-Link-Contextmenu-Opentab" accesskey="g"
+								default="true"
+								label="Ouvrir dans une nouvelle Onglet Fenêtres"
+								 oncommand="CSETBRSS.openFeedInNewTab(document.popupNode);"/>
+
+					<!-- Open Link in new window -->
+					<menuitem id="CSETB-RSS-Reader-Link-Contextmenu-Openwindow" accesskey="F"
+							label="Ouvrir dans une nouvelle Fenêtres"
+							oncommand="CSETBRSS.openFeedInNewWindow(document.popupNode);" />
+
+				</menupopup>
+				
+				
+				<!-- BOX - LOADING -->
+				<hbox id="CSETB-RSS-Reader-Box-Loading" hidden="false" align="center">
+					<image id="CSETB-RSS-Reader-Icon-Loading" class="CSETB-RSS-Reader-Icon-Loading" />
+					<description id="CSETB-RSS-Reader-Text-Loading" 
+						 value="Flow Loading"
+						 tooltiptext="RSS Flow Loading" /> 
+				</hbox>
+
+				<!-- BOX - RSS - INNER -->
+				<hbox id="CSETB-RSS-Reader-Box" hidden="true" width="500" align="center">
+
+					<!-- BUTTON - RSS - INNER -->
+					<hbox id="CSETB-RSS-Reader-Box-Inner">
+
+						<toolbarbutton id="CSETB-RSS-Reader-Toolbarbutton-Inner"
+										type="menu"
+										orient="horizontal"
+										class="toolbarbutton-1 chromeclass-toolbar-additional"
+										tooltiptext="La liste des articles"
+										label="">
+
+							<menupopup id="CSETB-RSS-Reader-Menupopup-Inner" onpopupshowing="event.stopPropagation();"></menupopup>
+						</toolbarbutton>
+
+					</hbox>
+
+					<!-- "LINK" - RSS - INNER -->
+					<hbox flex="1">
+						<description id="CSETB-RSS-Reader-Description-Link-Inner"
+									tooltip="CSETB-RSS-Reader-Tooltip"
+									allowevents="true"
+									contextmenu="CSETB-RSS-Reader-Description-Link-Inner-Contextmenu"
+									class="CSETB-RSS-Reader-url" />
+					</hbox>
+
+				</hbox>
+
+			</toolbaritem>
+
+
+			<!-- RSS Link Tooltip -->
+
+			<window id="Tooltip-Window">
+				<tooltip id="CSETB-RSS-Reader-Tooltip" position="before_end" noautohide="true" orient="vertical">
+
+				<!-- TOOLTIP HEADER -->	
+					<hbox id="CSETB-RSS-Reader-Tooltip-Box-Head" align="center">
+						<image id="CSETB-RSS-Reader-Tooltip-Image" src="chrome://csetoolbar/skin/cse.png" />
+						<vbox>
+							<label id="CSETB-RSS-Reader-Tooltip-Title" crop="end"/>
+						</vbox>
+					</hbox>
+
+				<!-- TOOLTIP DESC -->
+					<vbox id="CSETB-RSS-Reader-Tooltip-Box-Content">
+						<separator class="groove" flex="1"/>
+						<hbox>
+							<vbox>
+								<description id="CSETB-RSS-Reader-Tooltip-Content"></description>
+							</vbox>
+						</hbox>
+					</vbox>
+
+				</tooltip>
+			</window>
+			
+
+			
+
+
+		</toolbar>
+
+
+
+
+
+	</toolbox>
+
+
+</overlay>	

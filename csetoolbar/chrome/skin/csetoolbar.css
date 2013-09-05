@@ -1,0 +1,172 @@
+/*
+	csetoolbar.css file 
+	created on created on Saturday, August 31st, 2013 at 00:26
+	updated on 
+	by BETTA Mohamed Islem
+	bettamedislem@gmail.com
+							 */
+
+
+/* Buttons */
+
+/* Linking The cse.png icon to CSETB-Web-Button */
+#CSETB-Web-Button {
+	list-style-image: url("chrome://csetoolbar/skin/cse.png");
+}
+#CSETB-Toolbaritem {
+	margin-left: 1px;
+}
+
+
+/* Linking The fb.png icon to CSETB-Facebook-Button,CSE,Security */ 
+
+#CSETB-Facebook-Button, 
+#CSETB-Facebook-CSE,
+#CSETB-Facebook-Security
+{
+	list-style-image: url("chrome://csetoolbar/skin/fb.png");
+}
+
+
+/* Linking The tw.png icon to CSETB-Twitter-Button,CSE,Security */
+
+#CSETB-Twitter-Button,
+#CSETB-Twitter-CSE,
+#CSETB-Twitter-Security {
+	list-style-image: url("chrome://csetoolbar/skin/tw.png");
+}
+
+/* Linking The g+.png icon to CSETB-Gplus-Button */
+
+#CSETB-Gplus-Button {
+	list-style-image: url("chrome://csetoolbar/skin/g+.png");
+}
+
+/* Linking The yt.png icon to CSETB-Youtube-Button */
+
+#CSETB-Youtube-Button {
+	list-style-image: url("chrome://csetoolbar/skin/yt.png");
+}
+
+/* Linking The ss.png icon to CSETB-Slideshare-Button */
+
+#CSETB-Slideshare-Button {
+	list-style-image: url("chrome://csetoolbar/skin/ss.png");
+}
+
+/* Linking The gm.png icon to CSETB-Mail-Button */
+
+#CSETB-Mail-Button {
+	list-style-image: url("chrome://csetoolbar/skin/gm.png");
+}
+
+/* Linking The search.png icon to CSETB-Mail-Button */
+
+#CSETB-Search-Button {
+	list-style-image: url("chrome://csetoolbar/skin/search.png");
+}
+
+/* Forcing the label to be horizontally aligned */
+
+#CSETB-Search-Button > .toolbarbutton-menubutton-button {
+	-moz-box-orient: horizontal;
+}
+
+/* Linking The rss.png icon to CSETB-RSS-Reader-Toolbarbutton-Inner */
+
+#CSETB-RSS-Reader-Toolbarbutton-Inner {
+	list-style-image: url("chrome://csetoolbar/skin/rss.png");
+}
+
+/* ResizeBar */
+
+#CSETB-Resize-Bar {
+	background-image: url("chrome://csetoolbar/skin/gripper.jpg");
+	min-height: 22px;
+	min-width: 3px;
+}
+
+/* Resize Splitter */
+
+#CSETB-Resize-Splitter {
+	background: transparent;
+	border: none !important;
+}
+
+
+/*	Tooltip Header	*/
+
+#CSETB-RSS-Reader-Tooltip-Box-Head {
+	padding: 1px;
+}
+
+/* Tooltip Link Title */
+
+#CSETB-RSS-Reader-Tooltip-Title {
+	font-weight: bold;
+	max-width: 400px;
+}
+
+/*  Tooltip Content */
+
+#CSETB-RSS-Reader-Tooltip-Box-Content {
+	vertical-align 	: top;
+	top 			: 0px;
+	height 			: auto;
+}
+
+#CSETB-RSS-Reader-Tooltip-Content {
+	max-width: 400px;
+}
+
+
+/* URL - RSS Link  */
+
+.CSETB-RSS-Reader-url {
+    color	: #234ACE;
+    cursor	: pointer;
+    text-decoration	: underline;
+}
+
+.CSETB-RSS-Reader-url:hover {
+    color	: #D3302E;
+    cursor	: pointer;
+}
+
+#CSETB-RSS-Reader-Description-Link-Inner {
+	font-weight	: bold;
+	cursor		: pointer !important;
+	margin-left	: 1px;
+	padding		: 0px;
+	width		: auto;
+}
+
+#CSETB-RSS-Reader-Description-Link-Inner[visited="true"] {
+	color: #551A8B;
+}
+
+/* Loading RSS */
+
+#CSETB-RSS-Reader-Box-Loading {
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+/*	IMAGE LOADING	*/
+.CSETB-RSS-Reader-Icon-Loading{
+	list-style-image: url("chrome://csetoolbar/skin/throbber.gif");
+}
+
+/*-----------------------------------------------------------------------------*/
+
+/*	IMAGE LOADING ERROR	*/
+.CSETB-RSS-Reader-Icon-Loading-Error {
+	list-style-image: url("chrome://csetoolbar/skin/error.png");
+}
+
+/*-----------------------------------------------------------------------------*/
+
+/*	TEXT LOADING	*/
+#CSETB-RSS-Reader-Text-Loading {
+	font-weight: bold;
+}

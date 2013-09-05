@@ -1,0 +1,8 @@
+# chrome.manifest file 
+# created by BETTA Mohamed Islem
+# updated on Saturday, August 31st at 00:46
+
+
+content csetoolbar chrome/content/
+overlay chrome://browser/content/browser.xul chrome://csetoolbar/content/csetoolbar.xul
+skin csetoolbar classic/1.0 chrome/skin/
