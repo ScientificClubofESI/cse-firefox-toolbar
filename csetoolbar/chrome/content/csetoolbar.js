@@ -1,5 +1,5 @@
 /*
-	alfanoustoolbar.js file 
+	csetoolbar.js file 
 	created on Saturday, August 31st, 2013 at 23:26
 	by BETTA Mohamed Islem
 	bettamedislem@gmail.com
