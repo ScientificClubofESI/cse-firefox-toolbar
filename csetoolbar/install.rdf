@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<!-- 
+	install.rdf file 
+	created on Sunday, August 25th, 2013 at 17:25
+	by BETTA Mohamed Islem
+	bettamedislem@gmail.com
+	firefox supported versions : from 4 to 23 version
+	updated on 
+								-->
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+ 	<Description about="urn:mozilla:install-manifest">
+
+ 		<!-- Required Items -->
+
+ 		<em:id>csetoolbar@cse-club.org</em:id>
+ 		<em:name>CSE Toolbar</em:name>
+ 		<em:type>2</em:type>
+ 		<em:version>0.3</em:version>
+ 		
+ 		<em:targetApplication>	
+ 			<Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>1.5</em:minVersion>
+				<em:maxVersion>23.0.1</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		<em:unpack>true</em:unpack>
+
+		 <!-- Optional Items -->
+
+		<em:creator>Mohamed Islem BETTA</em:creator>
+		<em:contributor>Zakaria SMAHI</em:contributor>
+        <em:description>CSE Toolbar : Suivez les actualités du club CSE</em:description>
+        <em:homepageURL>http://www.cse-club.org</em:homepageURL>
+        <em:iconURL>chrome://csetoolbar/skin/icon.png</em:iconURL>
+   
+    </Description>
+</RDF>
+
