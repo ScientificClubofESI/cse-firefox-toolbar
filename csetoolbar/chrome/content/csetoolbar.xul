@@ -3,7 +3,7 @@
 <!-- 
 	csetoolbar.xul file 
 	created on Monday, August 26th, 2012 at 20:58
-	updated on Saturday, August 31st, 2013 at 00:00
+	updated on Friday, September 27th, 2013 at 01:40
 	by BETTA Mohamed Islem
 	bettamedislem@gmail.com
 							-->
@@ -19,9 +19,10 @@
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 	<!-- the JavaScript file used -->
+	
 
 	<script type="application/x-javascript"	src="chrome://csetoolbar/content/csetoolbar.js" />
-
+	<script type="application/x-javascript"	src="chrome://csetoolbar/defaults/preferences/pref.js" />
 	
 
 	<!-- ToolBox -->
@@ -105,6 +106,12 @@
 
 			<toolbarbutton id="CSETB-Slideshare-Button" tooltiptext="Suivez nos slides sur Slideshare" 
 				label="" onclick="CSETB_LoadURL('http://www.slideshare.net/ClubScientifiqueESI-CSE')" />
+
+			<!-- github button -->
+
+			<toolbarbutton id="CSETB-Github-Button" tooltiptext="Suivez nos Projets sur Github" 
+				label="" onclick="CSETB_LoadURL('https://github.com/csesi')" />
+
 
 			
 			<!-- a separator -->
@@ -197,18 +204,20 @@
 					<!-- Open Link in current tab -->
 					<menuitem id="CSETB-RSS-Reader-Link-Contextmenu-Open" accesskey="O"
 							label="Ouvrir"
-							oncommand="CSETBRSS.openFeed(document.popupNode);" />
+							oncommand="SRR.openFeed(document.popupNode);" />
+							<!--oncommand="CSETBRSS.openFeed(document.popupNode);" /-->
 
 					<!-- Open Link in new tab -->		
 					<menuitem id="CSETB-RSS-Reader-Link-Contextmenu-Opentab" accesskey="g"
 								default="true"
 								label="Ouvrir dans une nouvelle Onglet Fenêtres"
-								 oncommand="CSETBRSS.openFeedInNewTab(document.popupNode);"/>
-
+								oncommand="SRR.openFeedInNewTab(document.popupNode);"/>
+								<!-- oncommand="CSETBRSS.openFeedInNewTab(document.popupNode);"/-->
 					<!-- Open Link in new window -->
 					<menuitem id="CSETB-RSS-Reader-Link-Contextmenu-Openwindow" accesskey="F"
 							label="Ouvrir dans une nouvelle Fenêtres"
-							oncommand="CSETBRSS.openFeedInNewWindow(document.popupNode);" />
+							oncommand="SRR.openFeedInNewWindow(document.popupNode);" />
+							<!--oncommand="CSETBRSS.openFeedInNewWindow(document.popupNode);" /-->
 
 				</menupopup>
 				
@@ -217,7 +226,7 @@
 				<hbox id="CSETB-RSS-Reader-Box-Loading" hidden="false" align="center">
 					<image id="CSETB-RSS-Reader-Icon-Loading" class="CSETB-RSS-Reader-Icon-Loading" />
 					<description id="CSETB-RSS-Reader-Text-Loading" 
-						 value="Flow Loading"
+						 value="RSS Reader for next version"
 						 tooltiptext="RSS Flow Loading" /> 
 				</hbox>
 
