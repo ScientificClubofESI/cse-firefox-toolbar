@@ -3,7 +3,7 @@
 <!-- 
 	csetoolbar.xul file 
 	created on Monday, August 26th, 2012 at 20:58
-	updated on Saturday, August 31st, 2013 at 00:00
+	updated on Friday, September 27th, 2013 at 01:40
 	by BETTA Mohamed Islem
 	bettamedislem@gmail.com
 							-->
@@ -19,9 +19,10 @@
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 	<!-- the JavaScript file used -->
+	
 
 	<script type="application/x-javascript"	src="chrome://csetoolbar/content/csetoolbar.js" />
-
+	<script type="application/x-javascript"	src="chrome://csetoolbar/defaults/preferences/pref.js" />
 	
 
 	<!-- ToolBox -->
@@ -40,6 +41,33 @@
 
 			<toolbarbutton id="CSETB-Web-Button" tooltiptext="Le Site Web du CSE" accesskey="W" 
 				label="CSE SiteWeb" onclick="CSETB_LoadURL('http://cse-club.org/')" />
+
+			<!-- a separator -->
+
+			<toolbarseparator />
+
+			<!-- search in the cse website -->
+
+			<!-- SearchBox item -->
+
+			 <textbox id="CSETB-Search-Textbox" type="autocomplete" autocompletesearch="form-history" 
+				autocompletesearchparam="searchHistory" enablehistory="true" flex="2"
+				onkeypress="CSETB_KeyHandler(event);"/>
+
+			<!-- SearchBox Resizer -->
+
+			<splitter id="CSETB-Resize-Splitter" state="open" collapse="none"
+				resizebefore="closest" resizeafter="farthest"
+				tooltiptext="Redimensionner le champ de Recherche">
+
+				<vbox id="CSETB-Resize-Bar" />
+
+			</splitter>
+
+			<!-- Search Button -->
+
+			<toolbarbutton id="CSETB-Search-Button" tooltiptext="Recherchez sur le Site du CSE" accesskey="R"
+				label="Recherche" onclick="CSETB_Search(event, 'word')" />
 
 			<!-- a separator -->
 
@@ -106,37 +134,22 @@
 			<toolbarbutton id="CSETB-Slideshare-Button" tooltiptext="Suivez nos slides sur Slideshare" 
 				label="" onclick="CSETB_LoadURL('http://www.slideshare.net/ClubScientifiqueESI-CSE')" />
 
+			<!-- github button -->
+
+			<toolbarbutton id="CSETB-Github-Button" tooltiptext="Suivez nos Projets sur Github" 
+				label="" onclick="CSETB_LoadURL('https://github.com/csesi')" />
+
+			<!-- mail button -->
+
+			<toolbarbutton id="CSETB-Mail-Button" tooltiptext="Contactez nous sur notre Email" 
+				label="" onclick="CSETB_LoadURL('mailto:cse@esi.dz')" />
+
 			
 			<!-- a separator -->
 
 			<toolbarseparator />
-			
-			<!-- search in the cse website -->
 
-			<!-- SearchBox item -->
 
-			 <textbox id="CSETB-Search-Textbox" type="autocomplete" autocompletesearch="form-history" 
-				autocompletesearchparam="searchHistory" enablehistory="true" flex="2"
-				onkeypress="CSETB_KeyHandler(event);"/>
-
-			<!-- SearchBox Resizer -->
-
-			<splitter id="CSETB-Resize-Splitter" state="open" collapse="none"
-				resizebefore="closest" resizeafter="farthest"
-				tooltiptext="Redimensionner le champ de Recherche">
-
-				<vbox id="CSETB-Resize-Bar" />
-
-			</splitter>
-
-			<!-- Search Button -->
-
-			<toolbarbutton id="CSETB-Search-Button" tooltiptext="Recherchez sur le Site du CSE" accesskey="R"
-				label="Recherche" onclick="CSETB_Search(event, 'word')" />
-
-			<!-- a separator -->
-
-			<toolbarseparator />
 
 			<!-- Sections menu -->
 
@@ -174,11 +187,6 @@
 
 			<toolbarseparator />
 
-			<!-- mail button -->
-
-			<toolbarbutton id="CSETB-Mail-Button" tooltiptext="Contactez nous sur notre Email" 
-				label="" onclick="CSETB_LoadURL('mailto:cse@esi.dz')" />
-
 			</toolbaritem>
 
 			<!-- empty space-->
@@ -186,108 +194,17 @@
 			<toolbarspring flex="40" context="toolbar-context-menu"/>
 
 
-			<!-- RSS Reader -->
-
-
-			<toolbaritem id="CSETB-RSS-Reader" flex="0" align="center">
-
-				<!-- CONTEXT MENU - RSS LINK -->
-				<menupopup id="CSETB-RSS-Reader-Description-Link-Inner-Contextmenu">
-				
-					<!-- Open Link in current tab -->
-					<menuitem id="CSETB-RSS-Reader-Link-Contextmenu-Open" accesskey="O"
-							label="Ouvrir"
-							oncommand="CSETBRSS.openFeed(document.popupNode);" />
-
-					<!-- Open Link in new tab -->		
-					<menuitem id="CSETB-RSS-Reader-Link-Contextmenu-Opentab" accesskey="g"
-								default="true"
-								label="Ouvrir dans une nouvelle Onglet Fenêtres"
-								 oncommand="CSETBRSS.openFeedInNewTab(document.popupNode);"/>
-
-					<!-- Open Link in new window -->
-					<menuitem id="CSETB-RSS-Reader-Link-Contextmenu-Openwindow" accesskey="F"
-							label="Ouvrir dans une nouvelle Fenêtres"
-							oncommand="CSETBRSS.openFeedInNewWindow(document.popupNode);" />
-
-				</menupopup>
-				
-				
-				<!-- BOX - LOADING -->
-				<hbox id="CSETB-RSS-Reader-Box-Loading" hidden="false" align="center">
-					<image id="CSETB-RSS-Reader-Icon-Loading" class="CSETB-RSS-Reader-Icon-Loading" />
-					<description id="CSETB-RSS-Reader-Text-Loading" 
-						 value="Flow Loading"
-						 tooltiptext="RSS Flow Loading" /> 
-				</hbox>
-
-				<!-- BOX - RSS - INNER -->
-				<hbox id="CSETB-RSS-Reader-Box" hidden="true" width="500" align="center">
-
-					<!-- BUTTON - RSS - INNER -->
-					<hbox id="CSETB-RSS-Reader-Box-Inner">
-
-						<toolbarbutton id="CSETB-RSS-Reader-Toolbarbutton-Inner"
-										type="menu"
-										orient="horizontal"
-										class="toolbarbutton-1 chromeclass-toolbar-additional"
-										tooltiptext="La liste des articles"
-										label="">
-
-							<menupopup id="CSETB-RSS-Reader-Menupopup-Inner" onpopupshowing="event.stopPropagation();"></menupopup>
-						</toolbarbutton>
-
-					</hbox>
-
-					<!-- "LINK" - RSS - INNER -->
-					<hbox flex="1">
-						<description id="CSETB-RSS-Reader-Description-Link-Inner"
-									tooltip="CSETB-RSS-Reader-Tooltip"
-									allowevents="true"
-									contextmenu="CSETB-RSS-Reader-Description-Link-Inner-Contextmenu"
-									class="CSETB-RSS-Reader-url" />
-					</hbox>
-
-				</hbox>
-
-			</toolbaritem>
-
-
-			<!-- RSS Link Tooltip -->
-
-			<window id="Tooltip-Window">
-				<tooltip id="CSETB-RSS-Reader-Tooltip" position="before_end" noautohide="true" orient="vertical">
-
-				<!-- TOOLTIP HEADER -->	
-					<hbox id="CSETB-RSS-Reader-Tooltip-Box-Head" align="center">
-						<image id="CSETB-RSS-Reader-Tooltip-Image" src="chrome://csetoolbar/skin/cse.png" />
-						<vbox>
-							<label id="CSETB-RSS-Reader-Tooltip-Title" crop="end"/>
-						</vbox>
-					</hbox>
-
-				<!-- TOOLTIP DESC -->
-					<vbox id="CSETB-RSS-Reader-Tooltip-Box-Content">
-						<separator class="groove" flex="1"/>
-						<hbox>
-							<vbox>
-								<description id="CSETB-RSS-Reader-Tooltip-Content"></description>
-							</vbox>
-						</hbox>
-					</vbox>
-
-				</tooltip>
-			</window>
+		
 			
 
-			
+
+
+
+
+
 
 
 		</toolbar>
-
-
-
-
 
 	</toolbox>
 
