@@ -147,6 +147,6 @@ function CSETB_Search(event, type)
 		*/
 
 			var fhService = Components.classes["@mozilla.org/satchel/form-history;1"].getService(Components.interfaces.nsIFormHistory2);
-			fhService.addEntry("searchHistory", document.getElementById("CSETB-Search-textbox").value);
+			fhService.addEntry("searchHistory", document.getElementById("CSETB-Search-Textbox").value);
 
 	}
